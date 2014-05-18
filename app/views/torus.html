@@ -1,0 +1,57 @@
+<div class="">
+	<h1>Torus Pattern</h1>
+
+	<div class="hidden-print">
+		<p class="lead">Generate a crochet pattern for a torus (donut).</p>
+
+		<p>
+			The <em>hole circumference</em> is the size around the hole of the
+			torus.
+			The number of <em>rows</em> (and your gauge) decides how 'fat' your
+			torus will be.
+
+			<em>Regular increases</em> results in a pattern that is not
+			quite as accurate, but will usually end up with a more even-looking
+			ball.
+		</p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-md-4 hidden-print well" role="form">
+		<div class="form-group">
+			<label for="init-stitches">Hole Circumference:</label>
+			<div class="input-group">
+			<input id="init-stitches" class="form-control" type="number"
+				   max="1000"
+				   ng-model="init_stitches">
+			<span class="input-group-addon">Stitches</span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="row-count">Row Count:</label>
+			<input id="row-count" class="form-control" type="number" max="1000"
+				   ng-model="row_count">
+		</div>
+		<div class="form-group">
+			<label>
+				<input type="checkbox" ng-model="snap">
+				Regular Increases
+			</label>
+		</div>
+	</div>
+	<div class="col-xs-12 col-md-8">
+		<h2 class="hidden-print">Your Pattern</h2>
+
+		<p class="visible-print">
+			A pattern for a crocheted torus, with an inside circumference of {{
+			init_stitches }} stitches and {{row_count}} rows.
+		</p>
+
+		<div ng-repeat="pattern_line in pattern() track by $index"><b>Row
+			{{$index + 1}}:</b> {{pattern_line[0]}} ({{pattern_line[1]}}
+			stitches)
+		</div>
+	</div>
+</div>
+
+
