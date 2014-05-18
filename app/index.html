@@ -15,9 +15,12 @@
 	<meta name="viewport" content="width=device-width">
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
+
+	<link rel="stylesheet" href="styles/bootstrap-amelia.css">
 	<!-- build:css({.tmp,app}) styles/main.css -->
 	<link rel="stylesheet" href="styles/main.css">
 	<!-- endbuild -->
+
 </head>
 <body ng-app="crochetCadWebApp">
 <!--[if lt IE 7]>
@@ -31,17 +34,45 @@
 <script src="bower_components/json3/lib/json3.min.js"></script>
 <![endif]-->
 
-<div class="header">
-	<ul class="nav nav-pills pull-right">
-		<li class="active"><a ng-href="#">Home</a></li>
-		<li><a ng-href="#/sphere">Sphere</a></li>
-		<li><a ng-href="#/torus">Torus</a></li>
-	</ul>
-	<h3 class="text-muted">Crochet CAD</h3>
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle"
+					data-toggle="collapse"
+					data-target="#navbar-main">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<a ng-href="#" class="navbar-brand">Crochet CAD</a>
+		</div>
+		<div class="collapse navbar-collapse" id="navbar-main">
+
+			<ul class="nav navbar-nav navbar-right">
+				<li><a ng-href="#">Home</a></li>
+				<li><a ng-href="#/sphere">Sphere</a></li>
+				<li><a ng-href="#/torus">Torus</a></li>
+			</ul>
+
+		</div>
+	</div>
 </div>
+
+
+<!--
+  - Container
+  -->
 <div class="container" ng-view=""></div>
-<div class="footer">
-  <p><span class="heart-color">♥</span> from Mark</p>
+
+<!--
+  - Footer
+  -->
+<div id="footer" class="footer">
+	<div class="container">
+		<p>Crochet CAD is <a href="mailto:mark.smith@practicalpoetry.co.uk">Practically Poetry</a></p>
+	</div>
 </div>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

@@ -8,6 +8,8 @@ angular.module('crochetCadWebApp', [
 ])
 .config ($routeProvider) ->
     $routeProvider
+    .when '/',
+        templateUrl: 'views/index.html'
     .when '/sphere',
         templateUrl: 'views/sphere.html'
         controller: 'SphereCtrl'
@@ -15,4 +17,4 @@ angular.module('crochetCadWebApp', [
         templateUrl: 'views/torus.html'
         controller: 'TorusCtrl'
     .otherwise
-        redirectTo: '/sphere'
+        redirectTo: '/'

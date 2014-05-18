@@ -1,42 +1,49 @@
-<div class="">
+<div class="page-header">
 	<h1>Sphere Pattern</h1>
-
-	<div class="hidden-print">
-		<p class="lead">Generate a crochet pattern for a ball.</p>
-
-		<p>
-			The number of <em>rows</em> (and your gauge) decides how big your
-			ball
-			will be. <em>Regular increases</em> results in a pattern that is
-			not
-			quite as accurate, but will usually end up with a more even-looking
-			ball.
-		</p>
-	</div>
 </div>
-<div class="row">
-	<div class="col-xs-12 col-md-4 hidden-print well" role="form">
-		<div class="form-group">
-			<label for="row-count">Row Count:</label>
-			<input id="row-count" class="form-control" type="number" max="1000"
+
+<div class="hidden-print">
+	<p class="lead">Generate a crochet pattern for a ball.</p>
+
+	<p>
+		The number of <em>rows</em> (and your gauge) decides how big your
+		ball
+		will be. <em>Regular increases</em> results in a pattern that is
+		not
+		quite as accurate, but will usually end up with a more even-looking
+		ball.
+	</p>
+</div>
+
+<div class="hidden-print well form-horizontal" role="form">
+
+	<div class="form-group">
+		<label for="row-count" class="col-xs-2 control-label">Row
+			Count:</label>
+
+		<div class="col-xs-10">
+			<input id="row-count" class="form-control" type="number" min="10"
+				   max="1000"
 				   ng-model="row_count">
 		</div>
-		<div class="form-group">
+	</div>
+	<div class="form-group">
+		<div class="col-xs-offset-2 col-xs-10">
 			<label><input type="checkbox" ng-model="snap"> Regular
 				Increases</label>
 		</div>
 	</div>
-	<div class="col-xs-12 col-md-8">
-		<h2 class="hidden-print">Your Pattern</h2>
+</div>
+<div>
+	<h2 class="hidden-print">Your Pattern</h2>
 
-		<p class="visible-print">
-			A pattern for a crocheted ball, with {{row_count}} rows.
-		</p>
+	<p class="visible-print">
+		A pattern for a crocheted ball, with {{row_count}} rows.
+	</p>
 
-		<div ng-repeat="pattern_line in pattern() track by $index"><b>Row
-			{{$index + 1}}:</b> {{pattern_line[0]}} ({{pattern_line[1]}}
-			stitches)
-		</div>
+	<div ng-repeat="pattern_line in pattern() track by $index"><b>Row
+		{{$index + 1}}:</b> {{pattern_line[0]}} ({{pattern_line[1]}}
+		stitches)
 	</div>
 </div>
 
