@@ -1,19 +1,19 @@
 'use strict'
 
-describe 'Controller: MainCtrl', () ->
+describe 'Controller: Sphere', () ->
 
   # load the controller's module
   beforeEach module 'crochetCadWebApp'
 
-  MainCtrl = {}
+  SphereCtrl = {}
   scope = {}
 
   # Initialize the controller and a mock scope
   beforeEach inject ($controller, $rootScope) ->
     scope = $rootScope.$new()
-    MainCtrl = $controller 'MainCtrl', {
+    SphereCtrl = $controller 'SphereCtrl', {
       $scope: scope
     }
 
-  it 'should attach a list of awesomeThings to the scope', () ->
-    expect(scope.awesomeThings.length).toBe 3
+  it 'should set row_count to the correct default', () ->
+    expect(scope.row_count).toBe 10
